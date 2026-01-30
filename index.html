@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Tails Dog Sitting & Training</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       font-family: Arial, sans-serif;
       background-color: #f4faf8;
@@ -16,31 +17,57 @@
     header {
       background-color: #2f7f6f;
       color: white;
-      padding: 30px 10px;
+      padding: 24px 12px;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2em;
     }
     section {
-      padding: 20px 15px;
+      padding: 16px 12px;
     }
     h2 {
       color: #2d9cdb;
     }
     .services, .pricing, .hours, .contact {
       background: #fff;
-      margin: 15px auto;
-      padding: 15px;
-      border-radius: 10px;
+      margin: 12px auto;
+      padding: 16px;
+      border-radius: 12px;
       max-width: 600px;
+      width: 100%;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    ul { list-style: disc inside; text-align: left; padding-left: 20px; }
+    ul {
+      list-style: disc inside;
+      text-align: left;
+      padding-left: 10px;
+    }
     a { color: #2f7f6f; text-decoration: none; font-weight: bold; }
+
+    .book-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 14px 22px;
+      font-size: 1.1em;
+      background-color: #2f7f6f;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      width: 90%;
+      max-width: 320px;
+    }
+
     footer {
       padding: 20px;
-      font-size: 0.9em;
+      font-size: 0.85em;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.6em; }
+      h2 { font-size: 1.3em; }
+      .book-btn { font-size: 1em; }
     }
   </style>
 </head>
@@ -77,16 +104,37 @@
     <p>Weekdays: 4–6 PM<br>Weekends: 9 AM–5 PM</p>
   </section>
 
+  <section class="booking">
+    <h2>Book a Service</h2>
+    <p>Tap the button below to send a booking request by email.</p>
+    <a class="book-btn" href="mailto:kpj5331@gmail.com?subject=Happy%20Tails%20Booking&body=Hi%20Kevin,%0A%0AI%20would%20like%20to%20book%20a%20service.%0A%0APet%20type:%0ADate:%0ATime:%0A%0AThanks!" onclick="showConfirmation()">Book Now</a>
+  </section>
+
   <section class="contact">
     <h2>Contact</h2>
     <p>Call / Text: 406-901-6441</p>
     <p>Venmo: <a href="https://venmo.com/Kevin-Johnson-2698" target="_blank">@Kevin-Johnson-2698</a></p>
     <p>Email: <a href="mailto:kpj5331@gmail.com">kpj5331@gmail.com</a></p>
     <p>Website: <a href="https://kpj5331.github.io/happy-tails-dogs-lolo" target="_blank">https://kpj5331.github.io/happy-tails-dogs-lolo</a></p>
+
+    <br>
+    <a href="mailto:kpj5331@gmail.com?subject=Happy%20Tails%20Booking&body=Hi%20Happy%20Tails!%0A%0AI'd%20like%20to%20book%20dog%20sitting%20or%20training.%0AName:%0APet:%0ADate:%0AServices:%0A%0AThanks!" 
+       onclick="alert('Booking request opened! Please send the email to confirm. 🐶')"
+       style="display:inline-block;padding:15px 25px;background:#2f7f6f;color:white;border-radius:8px;font-size:1.2em;">
+       🐾 Book Now
+    </a>
   </section>
 
   <footer>
     &copy; 2026 Happy Tails Dog Sitting & Training
   </footer>
+  <script>
+    function showConfirmation() {
+      setTimeout(function() {
+        alert("Thanks for booking with Happy Tails! 🐾
+Your email app should open. Once you send it, we’ll get back to you soon.");
+      }, 300);
+    }
+  </script>
 </body>
 </html>
