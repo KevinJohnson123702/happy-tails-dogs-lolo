@@ -7,36 +7,44 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4faf8;
+      background-color: #f4faf8;
       color: #1f2937;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding: 20px;
     }
     header {
       background-color: #2f7f6f;
       color: white;
       padding: 30px 10px;
     }
-    header h1 { margin: 0; font-size: 2.5em; }
-    section { margin: 20px auto; max-width: 600px; }
-    .services, .contact { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    h2 { color: #2d9cdb; }
-    ul { text-align: left; list-style: disc inside; padding-left: 20px; }
-    .book-btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 25px;
-      background-color: #f2994a;
-      color: white;
-      font-size: 1.1em;
-      border-radius: 10px;
-      text-decoration: none;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
     }
-    .book-btn:hover { background-color: #f2a66c; }
+    section {
+      padding: 20px 15px;
+    }
+    h2 {
+      color: #2d9cdb;
+    }
+    .services, .pricing, .hours, .contact {
+      background: #fff;
+      margin: 15px auto;
+      padding: 15px;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    ul { list-style: disc inside; text-align: left; padding-left: 20px; }
+    a { color: #2f7f6f; text-decoration: none; font-weight: bold; }
+    footer {
+      padding: 20px;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Happy Tails Dog Sitting & Training</h1>
     <p>Lolo, Montana</p>
@@ -51,16 +59,34 @@
       <li>Home visits</li>
       <li>Daycare</li>
     </ul>
-    <a class="book-btn" href="mailto:kpj5331@gmail.com?subject=Booking%20Request&body=Hi%20Kevin,%0AI%20would%20like%20to%20book%20a%20dog%20sitting%20or%20training%20service.%0AThank%20you!">Book Now</a>
+  </section>
+
+  <section class="pricing">
+    <h2>Pricing</h2>
+    <ul>
+      <li>Dog walking (30 min): $5–$10</li>
+      <li>Check-in visit (30–60 min): $10–$15</li>
+      <li>Extended play / dog sitting (2–4 hrs): $20–$30</li>
+      <li>Basic training (30 min): $10–$15</li>
+      <li>Combo (walk + training 30 min): $12</li>
+    </ul>
+  </section>
+
+  <section class="hours">
+    <h2>Hours</h2>
+    <p>Weekdays: 4–6 PM<br>Weekends: 9 AM–5 PM</p>
   </section>
 
   <section class="contact">
     <h2>Contact</h2>
     <p>Call / Text: 406-901-6441</p>
-    <p>Email: <a href="mailto:kpj5331@gmail.com">kpj5331@gmail.com</a></p>
     <p>Venmo: <a href="https://venmo.com/Kevin-Johnson-2698" target="_blank">@Kevin-Johnson-2698</a></p>
+    <p>Email: <a href="mailto:kpj5331@gmail.com">kpj5331@gmail.com</a></p>
     <p>Website: <a href="https://kpj5331.github.io/happy-tails-dogs-lolo" target="_blank">https://kpj5331.github.io/happy-tails-dogs-lolo</a></p>
   </section>
 
+  <footer>
+    &copy; 2026 Happy Tails Dog Sitting & Training
+  </footer>
 </body>
 </html>
