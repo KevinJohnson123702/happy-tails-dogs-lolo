@@ -1,121 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Tails Dog Sitting & Training</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4faf8;
+      background-color: #f4faf8;
       color: #1f2937;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
     header {
-      background: linear-gradient(#87ceeb, #eaf7ff);
-      text-align: center;
-      padding: 40px 20px;
-    }
-    header img {
-      width: 140px;
-      margin-bottom: 10px;
+      background-color: #2f7f6f;
+      color: white;
+      padding: 30px 10px;
     }
     header h1 {
-      margin: 10px 0 5px;
-      font-size: 2.5em;
+      margin: 0;
+      font-size: 2em;
     }
     header p {
-      font-size: 1.1em;
-      color: #374151;
-    }
-    .book-now {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 28px;
-      background: #f97316;
-      color: white;
-      border-radius: 8px;
-      font-size: 1.1em;
-      text-decoration: none;
+      margin: 5px 0 15px;
+      font-size: 1em;
     }
     section {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
+      padding: 20px 15px;
     }
     h2 {
-      text-align: center;
-      color: #2f7f6f;
+      color: #2d9cdb;
+      margin-bottom: 10px;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+    .services, .pricing, .hours, .contact {
+      background: #fff;
+      margin: 15px auto;
+      padding: 15px;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
     }
-    li {
-      margin: 8px 0;
-    }
+    ul { list-style: disc inside; padding-left: 20px; }
+    a { color: #2f7f6f; text-decoration: none; font-weight: bold; }
     footer {
-      text-align: center;
       padding: 20px;
       font-size: 0.9em;
+    }
+    .book-now {
+      display: block;
+      width: fit-content;
+      margin: 15px auto;
+      padding: 12px 25px;
+      background-color: #2f7f6f;
+      color: white;
+      font-size: 1.1em;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+    }
+    #confirmation {
+      display: none;
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.6em; }
+      .services, .pricing, .hours, .contact { padding: 15px 10px; }
+      .book-now { padding: 10px 20px; font-size: 1em; }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Happy Tails Dog Sitting & Training</h1>
+    <p>Lolo, Montana</p>
+    <button class="book-now" id="bookNowBtn">Book Now</button>
+    <div id="confirmation">Thanks for booking! Once you send the email, we’ll get back to you soon 🐾</div>
+  </header>
 
-<header>
-  <img src="logo.png" alt="Happy Tails Logo" />
-  <h1>Happy Tails</h1>
-  <p>Dog Sitting & Training · Lolo, Montana</p>
-  <a class="book-now" href="https://mail.google.com/mail/?view=cm&fs=1&to=kpj5331@gmail.com&su=Happy%20Tails%20Booking&body=Hi%20Kevin,%0A%0AService:%0APet%20type:%0ADate:%0ATime:%0AAddress:%0A%0AThanks!">Book Now</a>
-</header>
+  <section class="services">
+    <h2>Services</h2>
+    <ul>
+      <li>Dog walking & training</li>
+      <li>Cat sitting</li>
+      <li>Small animals</li>
+      <li>Home visits</li>
+      <li>Daycare</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>Services</h2>
-  <div class="cards">
-    <div class="card">Dog Walking</div>
-    <div class="card">Training<br><small>Treats are not provided by trainer</small></div>
-    <div class="card">Pet Sitting</div>
-    <div class="card">Home Visits</div>
-    <div class="card">Daycare</div>
-  </div>
-</section>
+  <section class="pricing">
+    <h2>Pricing</h2>
+    <ul>
+      <li>Dog walking (30 min): $5–$10</li>
+      <li>Check-in visit (30–60 min): $10–$15</li>
+      <li>Extended play / dog sitting (2–4 hrs): $20–$30</li>
+      <li>Basic training (30 min): $10–$15</li>
+      <li>Combo (walk + training 30 min): $12</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>Pricing</h2>
-  <div class="cards">
-    <div class="card">Dog walk (30 min)<br>$5–$10</div>
-    <div class="card">Check-in visit<br>$10–$15</div>
-    <div class="card">Extended sitting (2–4 hrs)<br>$20–$30</div>
-    <div class="card">Training (30 min)<br>$10–$15</div>
-    <div class="card">Walk + Training<br>$12</div>
-  </div>
-</section>
+  <section class="hours">
+    <h2>Hours</h2>
+    <p>Weekdays: 4–6 PM<br>Weekends: 9 AM–5 PM</p>
+  </section>
 
-<section>
-  <h2>Contact</h2>
-  <div class="cards">
-    <div class="card">Call / Text<br>406-901-6441</div>
-    <div class="card">Email<br>kpj5331@gmail.com</div>
-    <div class="card">Venmo<br>@Kevin-Johnson-2698</div>
-  </div>
-</section>
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Call / Text: 406-901-6441</p>
+    <p>Venmo: <a href="https://venmo.com/Kevin-Johnson-2698" target="_blank">@Kevin-Johnson-2698</a></p>
+    <p>Email: <a href="mailto:kpj5331@gmail.com">kpj5331@gmail.com</a></p>
+    <p>Website: <a href="https://kpj5331.github.io/happy-tails-dogs-lolo" target="_blank">https://kpj5331.github.io/happy-tails-dogs-lolo</a></p>
+  </section>
 
-<footer>
-  © 2026 Happy Tails Dog Sitting & Training
-</footer>
+  <footer>
+    &copy; 2026 Happy Tails Dog Sitting & Training
+  </footer>
 
+  <script>
+    document.getElementById("bookNowBtn").addEventListener("click", function() {
+      const email = "kpj5331@gmail.com";
+      const subject = encodeURIComponent("Happy Tails Booking");
+      const body = encodeURIComponent("Hi Kevin,\n\nPet type:\nService:\nDate:\nTime:\nAddress:\n\nThanks!");
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+      window.open(gmailUrl, "_blank");
+      document.getElementById("confirmation").style.display = "block";
+    });
+  </script>
 </body>
 </html>
