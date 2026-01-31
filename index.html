@@ -160,10 +160,13 @@
       const email = "kpj5331@gmail.com";
       const subject = encodeURIComponent("Happy Tails Booking");
       const body = encodeURIComponent("Hi Kevin,\n\nPet type:\nService:\nDate:\nTime:\nAddress:\n\nThanks!");
+      const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
-      window.open(gmailUrl, "_blank");
-      document.getElementById("confirmation").style.display = "block";
-    });
-  </script>
-</body>
-</html>
+
+      // Detect mobile devices
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        window.location.href = mailtoLink; // open default mail app
+      } else {
+        window.open(gmailUrl, "_b
