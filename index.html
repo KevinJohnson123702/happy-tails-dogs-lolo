@@ -89,6 +89,15 @@
       transform: scale(1.05);
     }
 
+    #confirmation {
+      display: none;
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
     section {
       padding: 20px 15px;
     }
@@ -123,13 +132,6 @@
       border: 2px solid #2f7f6f;
     }
 
-    #confirmation {
-      display: none;
-      margin-top: 15px;
-      color: green;
-      font-weight: bold;
-    }
-
     footer {
       padding: 20px;
       font-size: 0.9em;
@@ -137,31 +139,18 @@
 
     /* Hide nav for mobile users */
     @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-      header h1 {
-        font-size: 1.5em;
-        margin-top: -40px;
-      }
-      header img.logo {
-        width: 100px;
-      }
-      header img.hero {
-        max-height: 180px;
-      }
-      .services, .pricing, .hours, .contact {
-        padding: 15px 10px;
-      }
-      .book-now {
-        padding: 10px 20px;
-        font-size: 1em;
-      }
+      nav { display: none; }
+      header h1 { font-size: 1.5em; margin-top: -40px; }
+      header img.logo { width: 100px; }
+      header img.hero { max-height: 180px; }
+      .services, .pricing, .hours, .contact { padding: 15px 10px; }
+      .book-now { padding: 10px 20px; font-size: 1em; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation (visible on desktop only) -->
   <nav>
     <a href="https://kevinjohnson123702.github.io/happy-tails-dogs-lolo/#">Home</a>
     <a href="https://kevinjohnson123702.github.io/happy-tails-dogs-lolo/#services">Services</a>
@@ -175,9 +164,7 @@
     <img src="logo.png" alt="Happy Tails Logo" class="logo">
     <h1>Happy Tails Dog Sitting & Training</h1>
     <button class="book-now" id="bookNowBtn">Book Now</button>
-    <div id="confirmation">
-      Thanks for booking! Once you send the email, we’ll get back to you soon 🐾
-    </div>
+    <div id="confirmation">Thanks for booking! Once you send the email, we’ll get back to you soon 🐾</div>
   </header>
 
   <section class="services" id="services">
@@ -228,26 +215,49 @@
   </footer>
 
   <script>
+    // Book Now button logic
     const bookButton = document.getElementById("bookNowBtn");
     const confirmation = document.getElementById("confirmation");
 
     bookButton.addEventListener("click", () => {
       const email = "kpj5331@gmail.com";
       const subject = encodeURIComponent("Happy Tails Booking");
-      const body = encodeURIComponent("Hi Kevin,\\n\\nPet type:\\nService:\\nDate:\\nTime:\\nAddress:\\n\\nThanks!");
+      const body = encodeURIComponent(`Happy Tails Booking
+Pet Type:
+Service needed:
+Date:
+Time:
+Address:
 
-      const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+Thanks`);
+
+      // Desktop Gmail link with prefilled message
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
 
+      // Mobile mail app link
+      const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
       if (isMobile) {
         window.location.href = mailtoLink;
       } else {
-        const win = window.open(gmailUrl, "_blank");
-        if (win) win.focus();
+        window.open(gmailUrl, "_blank");
       }
 
+      // Show confirmation message
       confirmation.style.display = "block";
+      setTimeout(() => {
+        confirmation.style.opacity = 1;
+      }, 50);
+
+      // Hide confirmation after 5 seconds
+      setTimeout(() => {
+        confirmation.style.opacity = 0;
+        setTimeout(() => {
+          confirmation.style.display = "none";
+        }, 1000);
+      }, 5000);
     });
   </script>
 
