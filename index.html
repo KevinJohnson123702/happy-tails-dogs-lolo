@@ -103,11 +103,11 @@
       <li>🐹 Small Animals</li>
     </ul>
 
-    <p><strong>Select a service and click “Book Now” to open Gmail or your email app with a pre-filled template:</strong></p>
+    <p><strong>Select a service and click “Book Now” to open your email app with a pre-filled template:</strong></p>
     <select id="service-select">
-      <option value="Dog walking">🐕 Dog Walking</option>
-      <option value="Pet sitting">🏠 Pet Sitting</option>
-      <option value="Dog training">🎓 Dog Training</option>
+      <option value="dog walking">🐕 Dog Walking</option>
+      <option value="pet sitting">🏠 Pet Sitting</option>
+      <option value="dog training">🎓 Dog Training</option>
     </select>
     <br>
     <a class="book-btn" id="book-btn" href="#">🐾 Book Now</a>
@@ -149,24 +149,17 @@
     const bookBtn = document.getElementById('book-btn');
     const disclaimer = document.getElementById('disclaimer');
 
-    function isMobile() {
-      return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    }
-
     function updateLink() {
-      const service = select.value;
-      let bodyText = `Hi Happy Tails,%0A%0AI'd like to book ${service}.%0A%0AName:%0APet (type & name):%0ADate(s):%0ATime:%0AAddress:%0A%0AThanks!`;
+      const serviceValue = select.value; // lowercase for template
+      const serviceLabel = select.options[select.selectedIndex].text; // capitalized for user info
 
-      if (isMobile()) {
-        // Use mailto for mobile to open email app
-        bookBtn.href = `mailto:kpj5331@gmail.com?subject=Happy Tails Booking - ${encodeURIComponent(service)}&body=${bodyText}`;
-      } else {
-        // Desktop opens Gmail web
-        bookBtn.href = `https://mail.google.com/mail/?view=cm&fs=1&to=kpj5331@gmail.com&su=Happy Tails Booking - ${encodeURIComponent(service)}&body=${bodyText}`;
-      }
+      let bodyText = `Hi Happy Tails,%0A%0AI'd like to book ${serviceValue}.%0A%0AName:%0APet (type & name):%0ADate(s):%0ATime:%0AAddress:%0A%0AThanks!`;
+
+      // Use mailto for all devices to avoid blank screens on mobile
+      bookBtn.href = `mailto:kpj5331@gmail.com?subject=Happy Tails Booking - ${encodeURIComponent(serviceValue)}&body=${bodyText}`;
 
       // Show disclaimer only for Dog Training
-      if (service.toLowerCase() === 'dog training') {
+      if (serviceValue === 'dog training') {
         disclaimer.style.display = 'block';
       } else {
         disclaimer.style.display = 'none';
