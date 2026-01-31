@@ -15,17 +15,22 @@
     }
 
     header {
-      background: linear-gradient(135deg, #2f7f6f, #6fbf9a);
-      color: white;
-      padding: 40px 10px 20px 10px;
       position: relative;
+      text-align: center;
+    }
+
+    header img.hero {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
     }
 
     header img.logo {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       width: 150px;
-      max-width: 45%;
-      height: auto;
-      margin-bottom: 15px;
       border-radius: 15px;
       border: 3px solid white;
       background-color: rgba(255,255,255,0.2);
@@ -33,25 +38,31 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
 
-    header img.hero {
-      width: 100%;
-      max-height: 250px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
     header h1 {
-      margin: 10px 0 5px;
-      font-size: 2.2em;
-      text-shadow: 2px 2px rgba(0,0,0,0.2);
+      margin: -50px 0 10px;
+      font-size: 2em;
+      color: #fff;
+      text-shadow: 2px 2px rgba(0,0,0,0.3);
     }
 
-    header p {
-      margin: 0 0 15px;
-      font-size: 1em;
-      font-weight: bold;
-      text-shadow: 1px 1px rgba(0,0,0,0.15);
+    .book-now {
+      display: inline-block;
+      margin: 10px 0 20px;
+      padding: 12px 25px;
+      font-size: 1.2em;
+      color: white;
+      background-color: #ff7f50;
+      border: 3px solid white;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .book-now:hover {
+      background-color: #ff956f;
+      transform: scale(1.05);
     }
 
     section {
@@ -91,33 +102,6 @@
     ul { list-style: disc inside; padding-left: 20px; }
     a { color: #2f7f6f; text-decoration: none; font-weight: bold; }
 
-    footer {
-      padding: 20px;
-      font-size: 0.9em;
-    }
-
-    .book-now {
-      display: block;
-      width: fit-content;
-      margin: 15px auto;
-      padding: 12px 25px;
-      background-color: #ff7f50;
-      color: white;
-      font-size: 1.2em;
-      border-radius: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      border: 3px solid white;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
-    }
-
-    .book-now:hover {
-      background-color: #ff956f;
-      transform: scale(1.05);
-      box-shadow: 0 6px 10px rgba(0,0,0,0.25);
-    }
-
     #confirmation {
       display: none;
       margin-top: 15px;
@@ -125,21 +109,26 @@
       font-weight: bold;
     }
 
+    footer {
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
     @media (max-width: 600px) {
-      header h1 { font-size: 1.6em; }
+      header h1 { font-size: 1.5em; margin-top: -40px; }
       header img.logo { width: 100px; }
-      header img.hero { max-height: 150px; }
+      header img.hero { max-height: 180px; }
       .services, .pricing, .hours, .contact { padding: 15px 10px; }
       .book-now { padding: 10px 20px; font-size: 1em; }
     }
   </style>
 </head>
 <body>
+
   <header>
+    <img src="dog-hero.jpg" alt="Happy dogs playing outdoors" class="hero">
     <img src="logo.png" alt="Happy Tails Logo" class="logo">
-    <img src="dog-hero.jpg" alt="Happy dogs" class="hero">
     <h1>Happy Tails Dog Sitting & Training</h1>
-    <p>Lolo, Montana</p>
     <button class="book-now" id="bookNowBtn">Book Now</button>
     <div id="confirmation">Thanks for booking! Once you send the email, we’ll get back to you soon 🐾</div>
   </header>
@@ -219,5 +208,6 @@
       confirmation.style.display = "block";
     });
   </script>
+
 </body>
 </html>
