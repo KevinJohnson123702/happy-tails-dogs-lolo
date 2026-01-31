@@ -13,6 +13,7 @@
       padding: 0;
       text-align: center;
     }
+
     nav {
       background-color: #2f7f6f;
       display: flex;
@@ -22,6 +23,7 @@
       top: 0;
       z-index: 1000;
     }
+
     nav a {
       color: white;
       text-decoration: none;
@@ -31,18 +33,22 @@
       border-radius: 5px;
       transition: background-color 0.3s;
     }
+
     nav a:hover {
       background-color: rgba(255,255,255,0.2);
     }
+
     header {
       position: relative;
       text-align: center;
     }
+
     header img.hero {
       width: 100%;
       max-height: 300px;
       object-fit: cover;
     }
+
     header img.logo {
       position: absolute;
       top: 20px;
@@ -55,12 +61,14 @@
       padding: 5px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
+
     header h1 {
       margin: -50px 0 10px;
       font-size: 2em;
       color: #fff;
       text-shadow: 2px 2px rgba(0,0,0,0.3);
     }
+
     .book-now {
       display: inline-block;
       margin: 10px 0 20px;
@@ -75,17 +83,21 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       transition: transform 0.2s, background-color 0.2s;
     }
+
     .book-now:hover {
       background-color: #ff956f;
       transform: scale(1.05);
     }
+
     section {
       padding: 20px 15px;
     }
+
     h2 {
       color: #2d9cdb;
       margin-bottom: 10px;
     }
+
     .services, .pricing, .hours, .contact {
       background: #fff;
       margin: 15px auto;
@@ -95,7 +107,141 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-align: left;
     }
+
     .service-item {
       display: flex;
       align-items: center;
-      margin-bottom:
+      margin-bottom: 10px;
+    }
+
+    .service-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      margin-right: 10px;
+      object-fit: cover;
+      border: 2px solid #2f7f6f;
+    }
+
+    ul { list-style: disc inside; padding-left: 20px; }
+    a { color: #2f7f6f; text-decoration: none; font-weight: bold; }
+
+    #confirmation {
+      display: none;
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      nav { flex-direction: column; }
+      nav a { margin: 5px 0; }
+      header h1 { font-size: 1.5em; margin-top: -40px; }
+      header img.logo { width: 100px; }
+      header img.hero { max-height: 180px; }
+      .services, .pricing, .hours, .contact { padding: 15px 10px; }
+      .book-now { padding: 10px 20px; font-size: 1em; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#hours">Hours</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <img src="dog-hero.jpg" alt="Happy dogs playing outdoors" class="hero">
+    <img src="logo.png" alt="Happy Tails Logo" class="logo">
+    <h1>Happy Tails Dog Sitting & Training</h1>
+    <button class="book-now" id="bookNowBtn">Book Now</button>
+    <div id="confirmation">Thanks for booking! Once you send the email, we’ll get back to you soon 🐾</div>
+  </header>
+
+  <section class="services" id="services">
+    <h2>Services</h2>
+    <div class="service-item">
+      <img src="dog-walking.jpg" alt="Dog Walking">
+      <span>Dog walking & training</span>
+    </div>
+    <div class="service-item">
+      <img src="cat-sitting.jpg" alt="Cat Sitting">
+      <span>Cat sitting</span>
+    </div>
+    <div class="service-item">
+      <img src="small-animals.jpg" alt="Small Animals">
+      <span>Small animals</span>
+    </div>
+    <div class="service-item">
+      <img src="home-visits.jpg" alt="Home Visits">
+      <span>Home visits</span>
+    </div>
+    <div class="service-item">
+      <img src="daycare.jpg" alt="Daycare">
+      <span>Daycare</span>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <h2>Pricing</h2>
+    <ul>
+      <li>Dog walking (30 min): $5–$10</li>
+      <li>Check-in visit (30–60 min): $10–$15</li>
+      <li>Extended play / dog sitting (2–4 hrs): $20–$30</li>
+      <li>Basic training (30 min): $10–$15</li>
+      <li>Combo (walk + training 30 min): $12</li>
+    </ul>
+  </section>
+
+  <section class="hours" id="hours">
+    <h2>Hours</h2>
+    <p>Weekdays: 4–6 PM<br>Weekends: 9 AM–5 PM</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <p>Call / Text: 406-901-6441</p>
+    <p>Venmo: <a href="https://venmo.com/Kevin-Johnson-2698" target="_blank">@Kevin-Johnson-2698</a></p>
+    <p>Email: <a href="mailto:kpj5331@gmail.com">kpj5331@gmail.com</a></p>
+  </section>
+
+  <footer>
+    &copy; 2026 Happy Tails Dog Sitting & Training
+  </footer>
+
+  <script>
+    const bookButton = document.getElementById("bookNowBtn");
+    const confirmation = document.getElementById("confirmation");
+
+    bookButton.addEventListener("click", () => {
+      const email = "kpj5331@gmail.com";
+      const subject = encodeURIComponent("Happy Tails Booking");
+      const body = encodeURIComponent("Hi Kevin,\n\nPet type:\nService:\nDate:\nTime:\nAddress:\n\nThanks!");
+
+      const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        window.location.href = mailtoLink;
+      } else {
+        const win = window.open(gmailUrl, "_blank");
+        if (win) win.focus();
+      }
+
+      confirmation.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
