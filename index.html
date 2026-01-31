@@ -1,106 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Tails - Services</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f9f9f5;
-            margin: 0;
-            padding: 0;
-        }
+.services h2 {
+  text-align: center;
+  color: #2d9cdb;
+  margin-bottom: 5px;
+}
 
-        .services-section {
-            max-width: 1000px;
-            margin: 50px auto;
-            text-align: center;
-        }
+.services p {
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
 
-        .services-section h2 {
-            font-family: 'Georgia', serif;
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #333;
-        }
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
+.service-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        .service-card {
-            background-color: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
 
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
+.service-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
 
-        .service-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
+.service-card h3 {
+  margin: 10px 0 5px;
+  color: #2f7f6f;
+}
 
-        .service-card-content {
-            padding: 20px;
-        }
-
-        .service-card-content h3 {
-            margin: 0 0 10px;
-            font-size: 20px;
-            color: #333;
-        }
-
-        .service-card-content p {
-            margin: 0;
-            color: #666;
-            font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-
-<section class="services-section">
-    <h2>Our Services</h2>
-    <div class="services-grid">
-        <div class="service-card">
-            <img src="dog-walking.jpg" alt="Dog Walking">
-            <div class="service-card-content">
-                <h3>Dog Walking</h3>
-                <p>Daily walks for exercise and fun.</p>
-            </div>
-        </div>
-        <div class="service-card">
-            <img src="dog-training.jpg" alt="Dog Training">
-            <div class="service-card-content">
-                <h3>Dog Training</h3>
-                <p>Obedience and behavior training sessions.</p>
-            </div>
-        </div>
-        <div class="service-card">
-            <img src="dog-sitting.jpg" alt="Dog Sitting">
-            <div class="service-card-content">
-                <h3>Dog Sitting</h3>
-                <p>In-home pet sitting for your dogs when you're away.</p>
-            </div>
-        </div>
-        <div class="service-card">
-            <img src="cat-sitting.jpg" alt="Cat Sitting">
-            <div class="service-card-content">
-                <h3>Cat Sitting</h3>
-                <p>Loving care for your cats in their own home.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-</body>
-</html>
+.service-card p {
+  font-size: 0.95em;
+  color: #555;
+}
