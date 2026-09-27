@@ -1,4 +1,5 @@
 name: Deploy Happy Tails to GitHub Pages
+# Deploys the site to the GitHub Pages environment on every main-branch update.
 
 on:
   push:
