@@ -5,601 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Happy Tails Dog Sitting & Training in Lolo, Montana. Dog walking, pet sitting, home visits, and basic training.">
   <meta name="theme-color" content="#2f7f6f">
-  <title>Happy Tails | Dog Sitting & Training in Lolo, Montana</title>
+  <title>Happy Tails | Pet Care in Lolo, Montana</title>
   <style>
-    :root {
-      --green: #2f7f6f;
-      --green-dark: #236456;
-      --blue: #2d9cdb;
-      --yellow: #ffd65a;
-      --orange: #ff7f50;
-      --cream: #f4faf8;
-      --ink: #1f2937;
-      --muted: #64748b;
-      --white: #ffffff;
-      --shadow: 0 8px 25px rgba(31, 41, 55, 0.10);
-      --radius: 18px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--cream);
-      color: var(--ink);
-      line-height: 1.6;
-    }
-
-    a { color: inherit; }
-
-    .topbar {
-      background: var(--green-dark);
-      color: white;
-      text-align: center;
-      padding: 8px 16px;
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(47, 127, 111, 0.97);
-      box-shadow: 0 2px 12px rgba(0,0,0,.12);
-    }
-
-    .nav-inner {
-      max-width: 1050px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 10px 18px;
-    }
-
-    .brand {
-      color: white;
-      text-decoration: none;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 4px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 8px 11px;
-      border-radius: 10px;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      background: rgba(255,255,255,.16);
-    }
-
-    .nav-book {
-      background: var(--orange);
-      color: white !important;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 520px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      background: #285f55;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(rgba(0,0,0,.32), rgba(0,0,0,.55));
-      z-index: 1;
-    }
-
-    .hero img.hero-image {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: min(850px, 92%);
-      text-align: center;
-      color: white;
-      padding: 55px 15px;
-    }
-
-    .logo {
-      width: 125px;
-      height: 125px;
-      object-fit: contain;
-      background: white;
-      border-radius: 24px;
-      padding: 7px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.25);
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(2.1rem, 6vw, 4rem);
-      line-height: 1.05;
-      text-shadow: 0 3px 12px rgba(0,0,0,.35);
-    }
-
-    .hero p {
-      font-size: clamp(1rem, 2.4vw, 1.3rem);
-      margin: 14px auto 24px;
-      max-width: 650px;
-      text-shadow: 0 2px 8px rgba(0,0,0,.35);
-    }
-
-    .cta-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .button {
-      display: inline-block;
-      border: 0;
-      border-radius: 12px;
-      padding: 13px 22px;
-      font-size: 1rem;
-      font-weight: 800;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform .18s ease, filter .18s ease;
-    }
-
-    .button:hover,
-    .button:focus-visible {
-      transform: translateY(-2px);
-      filter: brightness(1.04);
-    }
-
-    .button-primary {
-      background: var(--orange);
-      color: white;
-      box-shadow: 0 5px 15px rgba(0,0,0,.2);
-    }
-
-    .button-secondary {
-      background: white;
-      color: var(--green-dark);
-    }
-
-    main {
-      max-width: 1050px;
-      margin: auto;
-      padding: 18px;
-    }
-
-    section {
-      scroll-margin-top: 80px;
-      margin: 24px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 18px;
-    }
-
-    .section-heading h2 {
-      color: var(--green-dark);
-      margin: 0 0 5px;
-      font-size: 2rem;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      margin: 0 auto;
-      max-width: 650px;
-    }
-
-    .card {
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 24px;
-    }
-
-    .services-grid,
-    .pricing-grid,
-    .info-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .services-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .service-card {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .service-card img {
-      width: 76px;
-      height: 76px;
-      flex: 0 0 76px;
-      object-fit: cover;
-      border-radius: 14px;
-      border: 2px solid #d7eee8;
-    }
-
-    .service-card h3 {
-      margin: 0 0 3px;
-      color: var(--green-dark);
-    }
-
-    .service-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .94rem;
-    }
-
-    .pricing-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .price-card {
-      position: relative;
-      border-top: 5px solid var(--blue);
-    }
-
-    .price-card h3 {
-      margin-top: 0;
-      color: var(--green-dark);
-    }
-
-    .price {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: var(--blue);
-    }
-
-    .price-card p {
-      margin-bottom: 0;
-      color: var(--muted);
-    }
-
-    .highlight {
-      background: #fff8d9;
-      border-left: 5px solid var(--yellow);
-    }
-
-    .info-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .info-card h3 {
-      margin-top: 0;
-      color: var(--green-dark);
-    }
-
-    .info-card p {
-      margin-bottom: 0;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .contact-links a {
-      color: var(--green-dark);
-      font-weight: 800;
-    }
-
-    #confirmation {
-      display: none;
-      margin: 15px auto 0;
-      max-width: 600px;
-      background: #e8f7ef;
-      color: #17643f;
-      padding: 11px 14px;
-      border-radius: 10px;
-      font-weight: 700;
-    }
-
-    footer {
-      background: #183f37;
-      color: white;
-      text-align: center;
-      padding: 28px 18px;
-      margin-top: 35px;
-    }
-
-    footer p {
-      margin: 5px 0;
-    }
-
-    .small {
-      font-size: .88rem;
-      opacity: .85;
-    }
-
-    @media (max-width: 760px) {
-      .nav-inner {
-        flex-direction: column;
-        padding: 8px 12px;
-      }
-
-      .nav-links {
-        width: 100%;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        padding-bottom: 2px;
-      }
-
-      .nav-links a {
-        white-space: nowrap;
-        font-size: .9rem;
-      }
-
-      .hero {
-        min-height: 500px;
-      }
-
-      .services-grid,
-      .pricing-grid,
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        padding: 20px;
-      }
-
-      .service-card img {
-        width: 65px;
-        height: 65px;
-        flex-basis: 65px;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .hero {
-        min-height: 470px;
-      }
-
-      .logo {
-        width: 105px;
-        height: 105px;
-      }
-
-      .hero-content {
-        padding-top: 35px;
-      }
-
-      .button {
-        width: 100%;
-      }
-    }
+    :root{--green:#2f7f6f;--dark:#236456;--blue:#2d9cdb;--yellow:#ffd65a;--orange:#ff7f50;--cream:#f4faf8;--ink:#1f2937;--muted:#64748b;--white:#fff;--shadow:0 8px 25px rgba(31,41,55,.1);--radius:18px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}a{color:inherit}
+    .topbar{background:var(--dark);color:#fff;text-align:center;padding:8px 16px;font-size:.9rem;font-weight:700}
+    nav{position:sticky;top:0;z-index:1000;background:rgba(47,127,111,.98);box-shadow:0 2px 12px rgba(0,0,0,.12)}.nav-inner{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 18px}.brand{color:#fff;text-decoration:none;font-weight:800;white-space:nowrap}.nav-links{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}.nav-links a{color:#fff;text-decoration:none;font-weight:700;padding:8px 11px;border-radius:10px}.nav-links a:hover,.nav-links a:focus-visible{background:rgba(255,255,255,.16)}.nav-book{background:var(--orange)}
+    .hero{position:relative;min-height:520px;display:grid;place-items:center;overflow:hidden;background:#285f55}.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.58));z-index:1}.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero-content{position:relative;z-index:2;width:min(850px,92%);text-align:center;color:#fff;padding:55px 15px}.logo-fallback{width:125px;height:125px;margin:0 auto 18px;border-radius:28px;background:#fff;color:var(--green);display:grid;place-items:center;font-size:3.7rem;box-shadow:0 8px 24px rgba(0,0,0,.25)}.hero h1{margin:0;font-size:clamp(2.1rem,6vw,4rem);line-height:1.05;text-shadow:0 3px 12px rgba(0,0,0,.35)}.hero p{font-size:clamp(1rem,2.4vw,1.3rem);margin:14px auto 24px;max-width:650px;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+    .cta-row{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}.button{display:inline-block;border:0;border-radius:12px;padding:13px 22px;font-size:1rem;font-weight:800;text-decoration:none;cursor:pointer;transition:transform .18s ease,filter .18s ease}.button:hover,.button:focus-visible{transform:translateY(-2px);filter:brightness(1.04)}.button-primary{background:var(--orange);color:#fff;box-shadow:0 5px 15px rgba(0,0,0,.2)}.button-secondary{background:#fff;color:var(--dark)}
+    main{max-width:1050px;margin:auto;padding:18px}section{scroll-margin-top:80px;margin:24px 0}.section-heading{text-align:center;margin-bottom:18px}.section-heading h2{color:var(--dark);margin:0 0 5px;font-size:2rem}.section-heading p{color:var(--muted);margin:0 auto;max-width:650px}.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}.services-grid,.pricing-grid,.info-grid{display:grid;gap:18px}.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .service-card{display:flex;gap:15px;align-items:center}.service-icon{width:76px;height:76px;flex:0 0 76px;border-radius:14px;background:#e8f7f2;display:grid;place-items:center;font-size:2rem;border:2px solid #d7eee8}.service-card h3{margin:0 0 3px;color:var(--dark)}.service-card p{margin:0;color:var(--muted);font-size:.94rem}
+    .pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.price-card{border-top:5px solid var(--blue)}.price-card h3{margin-top:0;color:var(--dark)}.price{font-size:1.6rem;font-weight:900;color:var(--blue)}.price-card p{margin-bottom:0;color:var(--muted)}.highlight{background:#fff8d9;border-left:5px solid var(--yellow)}
+    .info-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.info-card h3{margin-top:0;color:var(--dark)}.info-card p{margin-bottom:0}.contact-links{display:flex;flex-wrap:wrap;gap:10px}.contact-links a{color:var(--dark);font-weight:800}
+    #confirmation{display:none;margin:15px auto 0;max-width:600px;background:#e8f7ef;color:#17643f;padding:11px 14px;border-radius:10px;font-weight:700}
+    footer{background:#183f37;color:#fff;text-align:center;padding:28px 18px;margin-top:35px}footer p{margin:5px 0}.small{font-size:.88rem;opacity:.85}
+    @media(max-width:760px){.nav-inner{flex-direction:column;padding:8px 12px}.nav-links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;padding-bottom:2px}.nav-links a{white-space:nowrap;font-size:.9rem}.hero{min-height:500px}.services-grid,.pricing-grid,.info-grid{grid-template-columns:1fr}.card{padding:20px}.service-icon{width:65px;height:65px;flex-basis:65px}}
+    @media(max-width:420px){.hero{min-height:470px}.logo-fallback{width:105px;height:105px;font-size:3.1rem}.hero-content{padding-top:35px}.button{width:100%}}
   </style>
 </head>
-
 <body>
   <div class="topbar">Serving Lolo, Montana & nearby neighborhoods</div>
-
-  <nav aria-label="Main navigation">
-    <div class="nav-inner">
-      <a class="brand" href="#home">Happy Tails</a>
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#hours">Hours</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-book" href="#book">Book Now</a>
-      </div>
-    </div>
-  </nav>
+  <nav aria-label="Main navigation"><div class="nav-inner">
+    <a class="brand" href="#home">Happy Tails</a>
+    <div class="nav-links"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#hours">Hours</a><a href="#contact">Contact</a><a class="nav-book" href="#book">Book Now</a></div>
+  </div></nav>
 
   <header class="hero" id="home">
-    <img src="dog-hero.jpg" alt="Happy dogs playing outdoors" class="hero-image">
+    <img src="dog-hero.jpg" alt="Happy dogs playing outdoors">
     <div class="hero-content">
-      <img src="logo.png" alt="Happy Tails logo" class="logo">
+      <div class="logo-fallback" aria-label="Happy Tails">🐾</div>
       <h1>Happy Tails</h1>
       <p>Dog sitting, walking, basic training, and pet care right here in Lolo, Montana.</p>
-
-      <div class="cta-row" id="book">
-        <button class="button button-primary" id="bookNowBtn" type="button">Book Now</button>
-        <a class="button button-secondary" href="#services">See Services</a>
-      </div>
-
-      <div id="confirmation" role="status">
-        Your booking email is ready. Send it after checking the details!
-      </div>
+      <div class="cta-row" id="book"><button class="button button-primary" id="bookNowBtn" type="button">Book Now</button><a class="button button-secondary" href="#services">See Services</a></div>
+      <div id="confirmation" role="status">Your booking email is ready. Send it after checking the details!</div>
     </div>
   </header>
 
   <main>
     <section id="services">
-      <div class="section-heading">
-        <h2>Services</h2>
-        <p>Simple, affordable pet care for local families.</p>
-      </div>
-
+      <div class="section-heading"><h2>Services</h2><p>Simple, affordable pet care for local families.</p></div>
       <div class="services-grid">
-        <article class="card service-card">
-          <img src="dog-walking.jpg" alt="Dog walking">
-          <div>
-            <h3>Dog Walking & Basic Training</h3>
-            <p>Walks plus simple, reward-based practice.</p>
-          </div>
-        </article>
-
-        <article class="card service-card">
-          <img src="cat-sitting.jpg" alt="Cat sitting">
-          <div>
-            <h3>Cat Sitting</h3>
-            <p>Food, fresh water, litter care, and check-ins.</p>
-          </div>
-        </article>
-
-        <article class="card service-card">
-          <img src="small-animals.jpg" alt="Small animal care">
-          <div>
-            <h3>Small Animals</h3>
-            <p>Care for pets such as rabbits, fish, and other small animals.</p>
-          </div>
-        </article>
-
-        <article class="card service-card">
-          <img src="home-visits.jpg" alt="Pet home visit">
-          <div>
-            <h3>Home Visits</h3>
-            <p>Quick local visits to check on pets while you're away.</p>
-          </div>
-        </article>
+        <article class="card service-card"><div class="service-icon" aria-hidden="true">🐕</div><div><h3>Dog Walking & Basic Training</h3><p>Walks plus simple, reward-based practice.</p></div></article>
+        <article class="card service-card"><div class="service-icon" aria-hidden="true">🐈</div><div><h3>Cat Sitting</h3><p>Food, fresh water, litter care, and check-ins.</p></div></article>
+        <article class="card service-card"><div class="service-icon" aria-hidden="true">🐇</div><div><h3>Small Animals</h3><p>Care for pets such as rabbits, fish, and other small animals.</p></div></article>
+        <article class="card service-card"><div class="service-icon" aria-hidden="true">🏠</div><div><h3>Home Visits</h3><p>Quick local visits to check on pets while you're away.</p></div></article>
       </div>
     </section>
 
     <section id="pricing">
-      <div class="section-heading">
-        <h2>Simple Pricing</h2>
-        <p>Starting prices are shown below. Longer visits or special requests can be discussed before booking.</p>
-      </div>
-
+      <div class="section-heading"><h2>Simple Pricing</h2><p>Starting prices are shown below. Longer visits or special requests can be discussed before booking.</p></div>
       <div class="pricing-grid">
-        <article class="card price-card">
-          <h3>Dog Walking</h3>
-          <div class="price">$5–$10</div>
-          <p>30-minute walk</p>
-        </article>
-
-        <article class="card price-card">
-          <h3>Check-In Visit</h3>
-          <div class="price">$10–$15</div>
-          <p>30–60 minutes</p>
-        </article>
-
-        <article class="card price-card">
-          <h3>Extended Pet Sitting</h3>
-          <div class="price">$20–$30</div>
-          <p>2–4 hours</p>
-        </article>
-
-        <article class="card price-card">
-          <h3>Basic Training</h3>
-          <div class="price">$10–$15</div>
-          <p>30-minute session</p>
-        </article>
+        <article class="card price-card"><h3>Dog Walking</h3><div class="price">$5–$10</div><p>30-minute walk</p></article>
+        <article class="card price-card"><h3>Check-In Visit</h3><div class="price">$10–$15</div><p>30–60 minutes</p></article>
+        <article class="card price-card"><h3>Extended Pet Sitting</h3><div class="price">$20–$30</div><p>2–4 hours</p></article>
+        <article class="card price-card"><h3>Basic Training</h3><div class="price">$10–$15</div><p>30-minute session</p></article>
       </div>
-
-      <div class="card highlight" style="margin-top:18px;">
-        <strong>Want a combo?</strong> A 30-minute walk + basic training session is $12.
-      </div>
+      <div class="card highlight" style="margin-top:18px"><strong>Want a combo?</strong> A 30-minute walk + basic training session is $12.</div>
     </section>
 
     <section id="hours">
-      <div class="section-heading">
-        <h2>Hours</h2>
-        <p>Availability is based on the schedule below. Booking ahead is recommended.</p>
-      </div>
-
+      <div class="section-heading"><h2>Hours</h2><p>Availability is based on the schedule below. Booking ahead is recommended.</p></div>
       <div class="info-grid">
-        <article class="card info-card">
-          <h3>Weekdays</h3>
-          <p>4:00 PM–6:00 PM</p>
-        </article>
-
-        <article class="card info-card">
-          <h3>Weekends</h3>
-          <p>9:00 AM–5:00 PM</p>
-        </article>
-
-        <article class="card info-card">
-          <h3>Service Area</h3>
-          <p>Lolo and nearby neighborhoods.</p>
-        </article>
+        <article class="card info-card"><h3>Weekdays</h3><p>4:00 PM–6:00 PM</p></article>
+        <article class="card info-card"><h3>Weekends</h3><p>9:00 AM–5:00 PM</p></article>
+        <article class="card info-card"><h3>Service Area</h3><p>Lolo and nearby neighborhoods.</p></article>
       </div>
     </section>
 
     <section id="contact">
-      <div class="section-heading">
-        <h2>Ready to Book?</h2>
-        <p>Send the details through the Book Now button and we'll get back to you.</p>
-      </div>
-
-      <div class="card">
-        <div class="contact-links">
-          <a href="tel:4069016441">Call / Text</a>
-          <a href="mailto:kpj5331@gmail.com">Email</a>
-          <a href="https://venmo.com/Kevin-Johnson-2698" target="_blank" rel="noopener">Venmo</a>
-        </div>
-        <p class="small">Please include your pet type, requested service, date, time, and general location when booking.</p>
-      </div>
+      <div class="section-heading"><h2>Ready to Book?</h2><p>Send the details through the Book Now button and we'll get back to you.</p></div>
+      <div class="card"><div class="contact-links"><a href="tel:4069016441">Call / Text</a><a href="mailto:kpj5331@gmail.com">Email</a><a href="https://venmo.com/Kevin-Johnson-2698" target="_blank" rel="noopener">Venmo</a></div><p class="small">Please include your pet type, requested service, date, time, and general location when booking.</p></div>
     </section>
   </main>
 
-  <footer>
-    <strong>Happy Tails Dog Sitting & Training</strong>
-    <p>Lolo, Montana</p>
-    <p class="small">&copy; 2026 Happy Tails. All rights reserved.</p>
-  </footer>
+  <footer><strong>Happy Tails Dog Sitting & Training</strong><p>Lolo, Montana</p><p class="small">&copy; 2026 Happy Tails. All rights reserved.</p></footer>
 
   <script>
-    const bookButton = document.getElementById("bookNowBtn");
-    const confirmation = document.getElementById("confirmation");
-
-    bookButton.addEventListener("click", () => {
-      const email = "kpj5331@gmail.com";
-      const subject = encodeURIComponent("Happy Tails Booking");
-      const body = encodeURIComponent(
-        "Happy Tails Booking\n\n" +
-        "Pet type:\n" +
-        "Number of pets:\n" +
-        "Service needed:\n" +
-        "Preferred date:\n" +
-        "Preferred time:\n" +
-        "General location:\n\n" +
-        "Anything else we should know:\n\n" +
-        "Thanks!"
-      );
-
-      const gmailUrl =
-        "https://mail.google.com/mail/?view=cm&fs=1&to=" +
-        email + "&su=" + subject + "&body=" + body;
-
-      const mailtoUrl =
-        "mailto:" + email + "?subject=" + subject + "&body=" + body;
-
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-      if (isMobile) {
-        window.location.href = mailtoUrl;
-      } else {
-        window.open(gmailUrl, "_blank", "noopener");
-      }
-
-      confirmation.style.display = "block";
-      setTimeout(() => confirmation.style.scrollIntoView({ behavior: "smooth", block: "nearest" }), 50);
+    const bookButton=document.getElementById("bookNowBtn"),confirmation=document.getElementById("confirmation");
+    bookButton.addEventListener("click",()=>{
+      const email="kpj5331@gmail.com";
+      const subject=encodeURIComponent("Happy Tails Booking");
+      const body=encodeURIComponent("Happy Tails Booking\n\nPet type:\nNumber of pets:\nService needed:\nPreferred date:\nPreferred time:\nGeneral location:\n\nAnything else we should know:\n\nThanks!");
+      const gmailUrl="https://mail.google.com/mail/?view=cm&fs=1&to="+email+"&su="+subject+"&body="+body;
+      const mailtoUrl="mailto:"+email+"?subject="+subject+"&body="+body;
+      const isMobile=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if(isMobile){window.location.href=mailtoUrl}else{window.open(gmailUrl,"_blank","noopener")}
+      confirmation.style.display="block";
+      setTimeout(()=>confirmation.scrollIntoView({behavior:"smooth",block:"nearest"}),50);
     });
   </script>
 </body>
